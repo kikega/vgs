@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{%  load markdown_deux_tags %}
+
+{% block page %}
+
+	<nav>
+  		<ul class="pager">
+    		<li class="previous  {% if antdisable %} disabled {% endif %}">
+    			<a href="{% url 'tema' ant %}"><span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span> Anterior</a></li>
+    		<li><a href="#">Tema {{ tema.tema }}</a></li>
+    		<li class="next  {% if sigdisable %} disabled {% endif %}"><a href="{% url 'tema' sig %}">Siguiente <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span></a></li>
+  		</ul>
+	</nav>
+
+	<!--<h1>Tema {{ tema.tema }}</h1> -->
+{% endblock page%}
+
+{% block seccion %}
+	<h2 class="sub-header">{{ tema.descripcion}}
+		<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal">
+  			<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>  Preguntas
+		</button>
+		<a class="btn btn-primary btn-sm" href="#" role="button"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>  Tema completo</a>
+	</h2>
+	
+
+	<!-- Enlaza a las preguntas de ese tema -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+      			<div class="modal-header">
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        			<h4 class="modal-title">Preguntas tema {{ tema.tema }}</h4>
+      			</div>
+      			<div class="modal-body">
+        			<p>One fine body&hellip;</p>
+      			</div>
+      			<div class="modal-footer">
+        			<button type="button" class="btn btn-primary" data-dismiss="modal">Enviar</button>
+      			</div>
+    		</div><!-- /.modal-content -->
+  		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<!--<table class="table table-striped">-->
+	{% for capitulo in  capitulos %}
+		<h3>{{ capitulo.capitulo }}. {{ capitulo.titulo }}</h3>
+		<p>{{ capitulo.contenido|markdown }}</p>
+	{% endfor %}
+	<!--</table>-->
+
+	<nav>
+  		<ul class="pager">
+    		<li class="previous  {% if antdisable %} disabled {% endif %}">
+    			<a href="{% url 'tema' ant %}"><span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span> Anterior</a></li>
+    		<li><a href="#">Tema {{ tema.tema }}</a></li>
+    		<li class="next  {% if sigdisable %} disabled {% endif %}"><a href="{% url 'tema' sig %}">Siguiente <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span></a></li>
+  		</ul>
+	</nav>
+
+{% endblock seccion %}

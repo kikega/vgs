@@ -1,0 +1,5 @@
+<ul class="nav navbar-nav">
+  {% for enlace in menu %}
+    <li {% if enlace.active %}class="active"{% endif %}><a href="{{ enlace.url }}">{{ enlace.nombre }}</a></li>
+  {% endfor %}
+</ul>

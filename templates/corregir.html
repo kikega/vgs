@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block titulopagina %}	
+	Corregir Test
+{% endblock titulopagina %}
+
+{% block seccion %}
+
+	<div class="row">
+		<button class="btn btn-primary" type="button">
+			<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+  			 Nota <span class="badge">{{ nota }}</span>
+		</button>
+		<button class="btn btn-success" type="button">
+			<span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+  			 Acertadas <span class="badge">{{ acertadas }}</span>
+		</button>
+		<button class="btn btn-warning" type="button">
+			<span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
+  			 No Contestadas <span class="badge">{{ no_contestadas }}</span>
+		</button>
+		<button class="btn btn-danger" type="button">
+			<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+  			 Erróneas <span class="badge">{{ erroneas }}</span>
+		</button>	
+	</div>
+	<div class="row">
+		<h2>Preguntas falladas o no contestadas</h2>
+		{% for e in errores %}
+			<p><strong>{{ e.pregunta }}</strong> </p>
+			<p>{{ e.correcta }}</p>
+		{% endfor %}
+
+	</div>
+
+{% endblock seccion %}

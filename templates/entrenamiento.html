@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block page %}	
+	<h1>Entrenamiento</h1>
+{% endblock page%}
+
+{% block seccion %}
+	
+	<div class="form-group">
+	<form>
+	<select class="form-control">
+		{% for tema in temas %}
+			<option value="{{ tema.id }}">{{ tema.tema }} - {{ tema.descripcion }}</option>
+		{% endfor %}
+	</select>
+	</form>
+	</div>
+	
+	<div id="datos">
+		
+	</div>
+{% endblock seccion %}
+
+{% block scripts %}
+	<script>
+		$('select').on('change', SeleccionaTema);
+		function SeleccionaTema(){
+			var id = $(this).val();
+			$.ajax({
+				data: {'id': id},
+				url: 'busca-capitulos/',
+				type: 'get',
+
+				success: function(data){
+					var html = "";
+					for (var i=0; i<data.length; i++){
+						html += '<h3>' + data[i].fields.titulo + '</h3><p>' + data[i].fields.contenido + '</p>';
+					}
+				$('#datos').html(html);
+				}
+			});
+
+		}
+	</script>
+{% endblock scripts %}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block titulopagina %}
+  Panel de Control
+{% endblock titulopagina %}
+
+{% block page %}
+
+{% endblock page %}
+
+{% block seccion %}
+	<div class="row placeholders">
+        <div class="col-xs-6 col-sm-3">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>  Exámenes Realizados</h3>
+            </div>
+            <div class="panel-body">
+              <h2> {{ realizados }} </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>  Exámenes Aprobados</h3>
+            </div>
+            <div class="panel-body">
+              <h2> {{ aprobados }} </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Puntuación Máxima</h3>
+            </div>
+            <div class="panel-body">
+              <h2>{{ maxima.nota__max }}</h2>
+            </div>
+          </div>
+        </div>
+       <div class="col-xs-6 col-sm-3">
+          <div class="panel panel-danger">
+            <div class="panel-heading">
+              <h3 class="panel-title"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Puntuación Mínima</h3>
+            </div>
+            <div class="panel-body">
+              <h2>{{ minima.nota__min }}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <div class="row">
+    <h2 class="sub-header">Exámenes realizados</h2>
+    <table class="table table-striped">
+      <tr>
+        <th>Fecha</th>
+        <th>Puntuación</th>
+        <th>Acertadas</th>
+        <th>Falladas</th>
+      </tr>
+      {% for examen in  object_list %}
+        <tr>
+          <td>{{ examen.fecha }}</td>
+          <td>{{ examen.nota }}</td>
+          <td>{{ examen.acertadas }}</td>
+          <td>{{ examen.erroneas }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+{% endblock seccion %}

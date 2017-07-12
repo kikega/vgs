@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block page %}	
+	<h1>Temario 2016</h1>
+{% endblock%}
+
+{% block seccion %}
+	<h2 class="sub-header">Indice del contenido de la oposición</h2>
+	<table class="table table-striped">
+	<tr>
+		<th>Tema</th>
+		<th>Descripción</th>
+		<th>Errores</th>
+	</tr>
+	{% for tema in  object_list %}
+		<tr>
+			<td>{{ tema.tema }}</td>
+			<td><a href="{{ tema.tema }}">{{ tema.descripcion }}</a></td>
+			<td>50 %</td>
+		</tr>		
+	{% endfor %}
+	</table>
+{% endblock seccion %}

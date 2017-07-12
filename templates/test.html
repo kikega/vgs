@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block titulopagina %}	
+	Simulacro de exámen
+{% endblock titulopagina %}
+
+{% block seccion %}
+
+	<form action="corregir/" method="get">
+	
+	{% for p in preguntas %}
+		
+			<label>{{ forloop.counter }}({{ p.id }}). {{ p.pregunta }}</label>
+			<input type="hidden" name="id{{ forloop.counter }}" value="{{ p.id }}">
+			<div class="radio">
+				<label>
+					<input type="radio" name="r{{ forloop.counter }}" value="a">a) {{ p.res_a }} 
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="r{{ forloop.counter }}" value="b">b) {{ p.res_b }} 
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="r{{ forloop.counter }}" value="c">c) {{ p.res_c }} 
+				</label>
+			</div>
+			<input type="hidden" name="c{{ forloop.counter }}" value="{{ p.correcta }}">
+			
+			<br>
+			
+	{% endfor %}
+		<input type="submit" value="Enviar">
+	</form>
+	
+{% endblock seccion %}

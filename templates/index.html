@@ -1,0 +1,78 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="es"><head>
+	<meta charset="UTF-8">
+	<title>Curso Vigilante de Seguridad</title>
+	<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+	<link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+	<!-- <div class="container"> -->
+		<!-- Barra de navegacion principal -->
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-education" aria-hidden="true"></span>  Oposiciones</a></div>
+					 <!-- .btn-navbar para diseño responsive -->
+					<div class="navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="panel/">Panel de control</a></li>
+			              	<li><a href="admin/">Administración</a></li>
+			            </ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<header class="jumbotron masthead">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-5 col-md-5">
+						<h1>Curso</h1>
+						<h2>Vigilante de Seguridad</h2>
+					</div>
+					<div class="col-sm-7 col-md-7">
+						<div class="item active">
+							<img class="first-slide" src="{% static "img/placa.png" %}" alt="" height="283" width="400">
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="container">
+
+			<!--<ul class="breadcrumb">
+				<li>Usted se encuentra en</li>
+				<li><a href="#">Inicio</a></li>
+			</ul>-->
+		<div class="col-md-4 col-md-offset-4">
+			<form class="form-signin">
+        		<h2 class="form-signin-heading">Por favor, identifiquese</h2>
+        		<label for="inputEmail" class="sr-only">Email</label>
+        		<input type="text" id="inputEmail" class="form-control" placeholder="Usuario" required autofocus>
+        		<label for="inputPassword" class="sr-only">Password</label>
+        		<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        		<div class="checkbox">
+          			<label>
+            		<input type="checkbox" value="remember-me"> Recordar
+          			</label>
+        		</div>
+        		<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+      		</form>
+      	</div>
+		</div> <!-- Del container -->
+
+	<!--
+		<footer class="footer">
+      		<h4>Sobre este sitio</h4>
+			<p>
+				Este sitio web, pretende recopilar información y documentación técnica, sobre Linux, Redes y Comunicaciones, para utilizarla como recurso en el aula.
+				<br><span class="glyphicon glyphicon-education" aria-hidden="true"></span> 2015 - Enrique Gálvez Arques
+			</p>
+    	</footer>
+	</div> -->
+
+	<script type="text/javascript" src="{% static "js/jquery-2.1.4.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
+</body>
+</html>
