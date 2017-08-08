@@ -56,7 +56,7 @@ def test(request):
 	total = Pregunta.objects.count()
 
 	# Obtenemos 100 numeros aleatorios de todos los registros sin repetir
-	while i < 80:
+	while i < 40:
 		p = random.randint(1, total)
 		if p not in lista:
 			lista.append(p)
@@ -75,7 +75,7 @@ def corregir(request):
 
 	# Corregimos el examen y almacenamos el resultado en la BB.DD.
 	if request.method == 'GET':
-		for i in range(1, 81):
+		for i in range(1, 41):
 			error = Errores()
 			id_pregunta = "id"
 			id_pregunta += str(i)
