@@ -17,10 +17,11 @@ class Tema(models.Model):
 
 class Capitulo(models.Model):
 	id = models.AutoField(primary_key=True)
+	tema = models.ForeignKey(Tema)
 	capitulo = models.CharField(max_length=10)
 	titulo = models.CharField(max_length=200)
 	contenido = models.TextField()
-	tema = models.ForeignKey(Tema)
+	
 
 	class Meta:
 		ordering = ['capitulo']

@@ -56,7 +56,7 @@ def test(request):
 	total = Pregunta.objects.count()
 
 	# Obtenemos 100 numeros aleatorios de todos los registros sin repetir
-	while i < 40:
+	while i < 100:
 		p = random.randint(1, total)
 		if p not in lista:
 			lista.append(p)
@@ -75,7 +75,7 @@ def corregir(request):
 
 	# Corregimos el examen y almacenamos el resultado en la BB.DD.
 	if request.method == 'GET':
-		for i in range(1, 41):
+		for i in range(1, 101):
 			error = Errores()
 			id_pregunta = "id"
 			id_pregunta += str(i)
@@ -110,7 +110,7 @@ def corregir(request):
 
 	errores = Errores.objects.all()
 	# Calculo de la puntuacion segun convocatoria
-	nota = ((acertadas - (erroneas / 2)) * 10) / 8
+	nota = ((acertadas - (erroneas / 2)) * 10)
 	examen.acertadas = acertadas
 	examen.erroneas = erroneas + no_contestadas
 	examen.nota = nota
