@@ -110,7 +110,7 @@ def corregir(request):
 
 	errores = Errores.objects.all()
 	# Calculo de la puntuacion segun convocatoria
-	nota = ((acertadas - (erroneas / 2)) * 10)
+	nota = (acertadas - (erroneas / 2))
 	examen.acertadas = acertadas
 	examen.erroneas = erroneas + no_contestadas
 	examen.nota = nota
