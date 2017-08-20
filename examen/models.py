@@ -10,6 +10,7 @@ class Tema(models.Model):
 
 	class Meta:
 		ordering = ['tema']
+		verbose_name_plural = "Temas"
 
 	def __str__(self):
 		return '%s. %s' % (self.tema, self.descripcion)
@@ -21,7 +22,7 @@ class Capitulo(models.Model):
 	capitulo = models.CharField(max_length=10)
 	titulo = models.CharField(max_length=200)
 	contenido = models.TextField()
-	
+
 
 	class Meta:
 		ordering = ['capitulo']
@@ -40,6 +41,9 @@ class Pregunta(models.Model):
 	correcta = models.CharField(max_length=1)
 	tema = models.ForeignKey('Tema')
 	capitulo = models.ForeignKey('Capitulo')
+
+	class Meta:
+    	verbose_name_plural = "Preguntas"
 
 	def __str__(self):
 		return '%s %s %s %s' % (self.pregunta, self.res_a, self.res_b, self.res_c)
