@@ -41,10 +41,7 @@ class Pregunta(models.Model):
 	correcta = models.CharField(max_length=1)
 	tema = models.ForeignKey('Tema')
 	capitulo = models.ForeignKey('Capitulo')
-
-	class Meta:
-    	verbose_name_plural = "Preguntas"
-
+	
 	def __str__(self):
 		return '%s %s %s %s' % (self.pregunta, self.res_a, self.res_b, self.res_c)
 
@@ -55,6 +52,9 @@ class Examen(models.Model):
 	erroneas = models.IntegerField()
 	nota = models.FloatField()
 
+	class Meta:
+		verbose_name_plural = "Examenes"
+	
 	def __str__(self):
 		return str(self.fecha)
 
