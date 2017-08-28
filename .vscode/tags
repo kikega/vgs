@@ -6,6 +6,8 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 0001_initial.py	../examen/migrations/0001_initial.py	1;"	kind:file	line:1
 0002_tema_categoria.py	../examen/migrations/0002_tema_categoria.py	1;"	kind:file	line:1
+0003_auto_20170820_2049.py	../examen/migrations/0003_auto_20170820_2049.py	1;"	kind:file	line:1
+0004_auto_20170820_2052.py	../examen/migrations/0004_auto_20170820_2052.py	1;"	kind:file	line:1
 ALLOWED_HOSTS	../vigilante/settings.py	/^ALLOWED_HOSTS = []$/;"	kind:variable	line:28
 BASE_DIR	../vigilante/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
 Capitulo	../examen/models.py	/^class Capitulo(models.Model):$/;"	kind:class	line:19
@@ -15,16 +17,18 @@ DAB_FIELD_RENDERER	../vigilante/settings.py	/^DAB_FIELD_RENDERER = 'django_admin
 DATABASES	../vigilante/settings.py	/^DATABASES = {$/;"	kind:variable	line:82
 DEBUG	../vigilante/settings.py	/^DEBUG = True$/;"	kind:variable	line:26
 Errores	../examen/models.py	/^class Errores(models.Model):$/;"	kind:class	line:62
-Examen	../examen/models.py	/^class Examen(models.Model):$/;"	kind:class	line:52
+Examen	../examen/models.py	/^class Examen(models.Model):$/;"	kind:class	line:49
 ExamenAdmin	../examen/admin.py	/^class ExamenAdmin(admin.ModelAdmin):$/;"	kind:class	line:23
 INSTALLED_APPS	../vigilante/settings.py	/^INSTALLED_APPS = ($/;"	kind:variable	line:33
 LANGUAGE_CODE	../vigilante/settings.py	/^LANGUAGE_CODE = 'es-ES'$/;"	kind:variable	line:93
 MIDDLEWARE_CLASSES	../vigilante/settings.py	/^MIDDLEWARE_CLASSES = ($/;"	kind:variable	line:46
 Meta	../examen/models.py	/^	class Meta:$/;"	kind:class	line:11
 Meta	../examen/models.py	/^	class Meta:$/;"	kind:class	line:27
-Meta	../examen/models.py	/^	class Meta:$/;"	kind:class	line:45
+Meta	../examen/models.py	/^	class Meta:$/;"	kind:class	line:55
 Migration	../examen/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:7
 Migration	../examen/migrations/0002_tema_categoria.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:7
+Migration	../examen/migrations/0003_auto_20170820_2049.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:7
+Migration	../examen/migrations/0004_auto_20170820_2052.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:7
 PanelView	../examen/views.py	/^class PanelView(ListView):$/;"	kind:class	line:15
 Pregunta	../examen/models.py	/^class Pregunta(models.Model):$/;"	kind:class	line:36
 PreguntaAdmin	../examen/admin.py	/^class PreguntaAdmin(admin.ModelAdmin):$/;"	kind:class	line:6
@@ -45,10 +49,10 @@ __init__.py	../examen/migrations/__init__.py	1;"	kind:file	line:1
 __init__.py	../vigilante/__init__.py	1;"	kind:file	line:1
 __str__	../examen/models.py	/^	def __str__(self):$/;"	kind:member	line:15
 __str__	../examen/models.py	/^	def __str__(self):$/;"	kind:member	line:32
-__str__	../examen/models.py	/^	def __str__(self):$/;"	kind:member	line:48
+__str__	../examen/models.py	/^	def __str__(self):$/;"	kind:member	line:45
 __str__	../examen/models.py	/^	def __str__(self):$/;"	kind:member	line:58
 __str__	../examen/models.py	/^	def __str__(self):$/;"	kind:member	line:66
-acertadas	../examen/models.py	/^	acertadas = models.IntegerField()$/;"	kind:variable	line:54
+acertadas	../examen/models.py	/^	acertadas = models.IntegerField()$/;"	kind:variable	line:51
 admin.py	../examen/admin.py	1;"	kind:file	line:1
 application	../vigilante/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
 capitulo	../examen/models.py	/^	capitulo = models.CharField(max_length=10)$/;"	kind:variable	line:22
@@ -62,10 +66,12 @@ correcta	../examen/models.py	/^	correcta = models.TextField(null=True, max_lengt
 corregir	../examen/views.py	/^def corregir(request):$/;"	kind:function	line:69
 dependencies	../examen/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:9
 dependencies	../examen/migrations/0002_tema_categoria.py	/^    dependencies = [$/;"	kind:variable	line:9
+dependencies	../examen/migrations/0003_auto_20170820_2049.py	/^    dependencies = [$/;"	kind:variable	line:9
+dependencies	../examen/migrations/0004_auto_20170820_2052.py	/^    dependencies = [$/;"	kind:variable	line:9
 descripcion	../examen/models.py	/^	descripcion = models.CharField(max_length=200, blank=True)$/;"	kind:variable	line:7
 entrenamiento	../examen/views.py	/^class entrenamiento(ListView):$/;"	kind:class	line:122
-erroneas	../examen/models.py	/^	erroneas = models.IntegerField()$/;"	kind:variable	line:55
-fecha	../examen/models.py	/^	fecha = models.DateField(auto_now=True)$/;"	kind:variable	line:53
+erroneas	../examen/models.py	/^	erroneas = models.IntegerField()$/;"	kind:variable	line:52
+fecha	../examen/models.py	/^	fecha = models.DateField(auto_now=True)$/;"	kind:variable	line:50
 field	../examen/migrations/0001_initial.py	/^            field=models.ForeignKey(to='examen.Tema'),$/;"	kind:variable	line:71
 field	../examen/migrations/0001_initial.py	/^            field=models.ForeignKey(to='examen.Tema'),$/;"	kind:variable	line:76
 field	../examen/migrations/0002_tema_categoria.py	/^            field=models.CharField(blank=True, null=True, max_length=100),$/;"	kind:variable	line:17
@@ -102,11 +108,17 @@ name	../examen/migrations/0001_initial.py	/^            name='Tema',$/;"	kind:va
 name	../examen/migrations/0001_initial.py	/^            name='tema',$/;"	kind:variable	line:70
 name	../examen/migrations/0001_initial.py	/^            name='tema',$/;"	kind:variable	line:75
 name	../examen/migrations/0002_tema_categoria.py	/^            name='categoria',$/;"	kind:variable	line:16
-nota	../examen/models.py	/^	nota = models.FloatField()$/;"	kind:variable	line:56
+name	../examen/migrations/0003_auto_20170820_2049.py	/^            name='tema',$/;"	kind:variable	line:15
+name	../examen/migrations/0004_auto_20170820_2052.py	/^            name='examen',$/;"	kind:variable	line:15
+nota	../examen/models.py	/^	nota = models.FloatField()$/;"	kind:variable	line:53
 operations	../examen/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:12
 operations	../examen/migrations/0002_tema_categoria.py	/^    operations = [$/;"	kind:variable	line:13
+operations	../examen/migrations/0003_auto_20170820_2049.py	/^    operations = [$/;"	kind:variable	line:13
+operations	../examen/migrations/0004_auto_20170820_2052.py	/^    operations = [$/;"	kind:variable	line:13
 options	../examen/migrations/0001_initial.py	/^            options={$/;"	kind:variable	line:21
 options	../examen/migrations/0001_initial.py	/^            options={$/;"	kind:variable	line:64
+options	../examen/migrations/0003_auto_20170820_2049.py	/^            options={'ordering': ['tema'], 'verbose_name_plural': 'Temas'},$/;"	kind:variable	line:16
+options	../examen/migrations/0004_auto_20170820_2052.py	/^            options={'verbose_name_plural': 'Examenes'},$/;"	kind:variable	line:16
 ordering	../examen/models.py	/^		ordering = ['capitulo']$/;"	kind:variable	line:28
 ordering	../examen/models.py	/^		ordering = ['tema']$/;"	kind:variable	line:12
 pregunta	../examen/models.py	/^	pregunta = models.TextField(max_length=255)$/;"	kind:variable	line:37
@@ -134,7 +146,7 @@ urls.py	../examen/urls.py	1;"	kind:file	line:1
 urls.py	../vigilante/urls.py	1;"	kind:file	line:1
 verbose_name	../examen/models.py	/^		verbose_name = "Capitulo"$/;"	kind:variable	line:29
 verbose_name_plural	../examen/models.py	/^		verbose_name_plural = "Capitulos"$/;"	kind:variable	line:30
+verbose_name_plural	../examen/models.py	/^		verbose_name_plural = "Examenes"$/;"	kind:variable	line:56
 verbose_name_plural	../examen/models.py	/^		verbose_name_plural = "Temas"$/;"	kind:variable	line:13
-verbose_name_plural	../examen/models.py	/^    	verbose_name_plural = "Preguntas"$/;"	kind:variable	line:46
 views.py	../examen/views.py	1;"	kind:file	line:1
 wsgi.py	../vigilante/wsgi.py	1;"	kind:file	line:1

@@ -1,10 +1,18 @@
 from django.db import models
 
 # Create your models here.
+
+class Oposicion(models.Model):
+    oposicion = models.CharField(max_length=50)
+
+    def __str__(self):
+    		return self.oposicion
+
 class Tema(models.Model):
 	tema = models.IntegerField()
 	categoria = models.CharField(max_length=100, blank=True, null=True)
 	descripcion = models.CharField(max_length=200, blank=True)
+	oposicion = models.ManyToManyField(Oposicion)
 	#pregunta = models.IntegerField(blank=True)
 	#erronea = models.IntegerField(blank=True)
 
