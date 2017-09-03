@@ -11,12 +11,13 @@ class PreguntaAdmin(admin.ModelAdmin):
 
 class TemaAdmin(admin.ModelAdmin):
 	list_display = ('tema', 'descripcion')
+	list_filter = ('oposicion',)
 
 
 class CapituloAdmin(admin.ModelAdmin):
 	list_filter = ('tema', )
 	formfield_overrides = {
-		models.TextField: {'widget': AdminPagedownWidget},
+	models.TextField: {'widget': AdminPagedownWidget},
 	}
 
 
@@ -24,7 +25,7 @@ class ExamenAdmin(admin.ModelAdmin):
 	list_display = ('fecha', 'acertadas', 'erroneas', 'nota')
 
 
-admin.site.register(Tema, )
+admin.site.register(Tema, TemaAdmin)
 admin.site.register(Capitulo, CapituloAdmin)
 admin.site.register(Pregunta, PreguntaAdmin)
 admin.site.register(Examen, ExamenAdmin)
